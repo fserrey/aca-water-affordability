@@ -34,7 +34,7 @@ float_hogar_11 = type_dct['float64']
 int_hogar_11 = type_dct['int64']
 
 
-file_16 = [os.path.join(directory_hogar,i) for i in filelist_hogar if '20016.csv' in i][0]
+file_16 = [os.path.join(directory_hogar,i) for i in filelist_hogar if '2016.csv' in i][0]
 
 df = pd.read_csv(file_16)
 type_dct = {str(k): list(v) for k, v in df.groupby(df.dtypes, axis=1)}
@@ -67,28 +67,27 @@ total_float_16 = float_hogar_16 + add_float_16
 for date in range(2006,2019):
     if date <2011:
         file_path = [os.path.join(directory_hogar,i) for i in filelist_hogar if f'{date}.csv' in i]      
-        df = pd.read_csv(file_path)
+        df = pd.read_csv(file_path[0])
         columnas = [i for i in set(total_int_06+total_float_06) if i not in set(list(df.columns))]
         df_aux = pd.concat([df,pd.DataFrame(columns=columnas)], sort=True)
         df["id_d"] = df["ANOENC"].astype(int).astype(str) + df["NUMERO"].astype(int).astype(str) 
-        df_aux.to_csv(os.path.join(os.path.dirname(file_path),f'hogar_epf_{date}.csv'), index=False)
+        df_aux.to_csv(os.path.join(os.path.dirname(file_path[0]),f'hogar_epf_{date}.csv'), index=False)
     
     elif date in range(2011,2016):
         file_path = [os.path.join(directory_hogar,i) for i in filelist_hogar if f'{date}.csv' in i]        
-        df = pd.read_csv(file_path)
+        df = pd.read_csv(file_path[0])
         columnas =  [i for i in set(total_int_11+total_float_11) if i not in set(list(df.columns))]  
         df_aux = pd.concat([df,pd.DataFrame(columns=columnas)], sort=True)
         df["id_d"] = df["ANOENC"].astype(int).astype(str) + df["NUMERO"].astype(int).astype(str) 
-        df_aux.to_csv(os.path.join(os.path.dirname(file_path),f'hogar_epf_{date}.csv'), index=False)
+        df_aux.to_csv(os.path.join(os.path.dirname(file_path[0]),f'hogar_epf_{date}.csv'), index=False)
     
     else:
         file_path = [os.path.join(directory_hogar,i) for i in filelist_hogar if f'{date}.csv' in i]        
-        df = pd.read_csv(file_path)
+        df = pd.read_csv(file_path[0])
         columnas =  [i for i in set(total_int_16+total_float_16) if i not in set(list(df.columns))]  
         df_aux = pd.concat([df,pd.DataFrame(columns=columnas)], sort=True)
         df["id_d"] = df["ANOENC"].astype(int).astype(str) + df["NUMERO"].astype(int).astype(str) 
-        df_aux.to_csv(os.path.join(os.path.dirname(file_path),f'hogar_epf_{date}.csv'), index=False)
-    
+        df_aux.to_csv(os.path.join(os.path.dirname(file_path[0]),f'hogar_epf_{date}.csv'), index=False)
 ##################################################################################################
 
 # We now do the same with GASTOS
@@ -145,27 +144,27 @@ total_float_16 = float_gastos_16 + add_float_16
 for date in range(2006,2019):
     if date <2011:
         file_path = [os.path.join(directory_gastos,i) for i in filelist_gastos if f'{date}.csv' in i]        
-        df = pd.read_csv(file_path)
+        df = pd.read_csv(file_path[0])
         columnas = [i for i in set(total_int_06+total_float_06) if i not in set(list(df.columns))]
         df_aux = pd.concat([df,pd.DataFrame(columns=columnas)], sort=True)
         df["id_d"] = df["ANOENC"].astype(int).astype(str) + df["NUMERO"].astype(int).astype(str) 
-        df_aux.to_csv(os.path.join(os.path.dirname(file_path),f'gastos_epf_{date}.csv'), index=False)
+        df_aux.to_csv(os.path.join(os.path.dirname(file_path[0]),f'gastos_epf_{date}.csv'), index=False)
     
     elif date in range(2011,2016):
         file_path = [os.path.join(directory_gastos,i) for i in filelist_gastos if f'{date}.csv' in i]        
-        df = pd.read_csv(file_path)
+        df = pd.read_csv(file_path[0])
         columnas =  [i for i in set(total_int_11+total_float_11) if i not in set(list(df.columns))]  
         df_aux = pd.concat([df,pd.DataFrame(columns=columnas)], sort=True)
         df["id_d"] = df["ANOENC"].astype(int).astype(str) + df["NUMERO"].astype(int).astype(str) 
-        df_aux.to_csv(os.path.join(os.path.dirname(file_path),f'gastos_epf_{date}.csv'), index=False)
+        df_aux.to_csv(os.path.join(os.path.dirname(file_path[0]),f'gastos_epf_{date}.csv'), index=False)
     
     else:
         file_path = [os.path.join(directory_gastos,i) for i in filelist_gastos if f'{date}.csv' in i]        
-        df = pd.read_csv(file_path)
+        df = pd.read_csv(file_path[0])
         columnas =  [i for i in set(total_int_16+total_float_16) if i not in set(list(df.columns))]  
         df_aux = pd.concat([df,pd.DataFrame(columns=columnas)], sort=True)
         df["id_d"] = df["ANOENC"].astype(int).astype(str) + df["NUMERO"].astype(int).astype(str) 
-        df_aux.to_csv(os.path.join(os.path.dirname(file_path),f'gastos_epf_{date}.csv'), index=False)
+        df_aux.to_csv(os.path.join(os.path.dirname(file_path[0]),f'gastos_epf_{date}.csv'), index=False)
     
 
 
