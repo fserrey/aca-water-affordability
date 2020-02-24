@@ -123,3 +123,5 @@ for date in range(2006,2019):
 print('Tablas gastos actualizadas')
 
 # Hemos terminado la transformación de los csv para subirlos al servidor MySQL
+print("Has terminado la transformación de todas las tablas (por año)")
+print("Ahora puedes utilizar server_uploaded para subir las tablas completas o select_server_upload para selección de columnas")
