@@ -1,3 +1,21 @@
+# Description
+
+*[You can find the Kaggle version of the final dataset here](https://www.kaggle.com/fserrey/spanish-household-budget-survey)*
+
+The Household Budget Survey (Encuesta de Presuspuestos Familiares) provides annual information on the nature and destination of consumption expenditures, as well as on various characteristics related to household living conditions. The whole data its collected by the National Statistic Institute from Spain (*[Instituto Nacional de Estadística](www.ine.es)* or *INE* in Spanish)
+
+Consumption expenditures refer both to the money flow that the household allocates to the payment of certain final consumption goods and services, and to the value of goods received as self-consumption, self-supply, salary in kind, free or subsidized meals, and rent imputed to the dwelling in which the household resides (when it owns it or has it on loan from other households or institutions). Expenses are recorded at the time of acquisition, regardless of whether they are paid in cash or in installments.
+
+The sample size is approximately 24,000 households per year. 
+
+The dataset has been made using the public data provided by the National Statistic Institute from Spain (INE). I have used the microdata downloadable from[ their website](https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&cid=1254736176806&menu=resultados&secc=1254736195147&idp=1254735976608#!tabs-1254736195147).
+
+The data that you can download from the official website comes in a painful format that makes it difficult to be analysed by an inexperienced user of this type of data. Thus, I transformed the currently available time series to a CSV format so anyone can use it.
+
+As it is very hard to summarize the whole structure of the columns included in each table, [here you can find the official file (Spanish) ](https://www.ine.es/metodologia/t25/t2530p45816.pdf)describing the methodology used to build the table structure and what do every value mean. 
+
+Have fun!
+
 Table columns description:
 
 ## **Gastos**: 
