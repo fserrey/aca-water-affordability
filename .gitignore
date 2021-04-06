@@ -24,6 +24,8 @@ wheels/
 .installed.cfg
 *.egg
 MANIFEST
+notebooks/
+src/
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -99,8 +101,8 @@ venv.bak/
 
 # mkdocs documentation
 /site
-src/*
-notebooks/*
+aca-water-affordability/src
+aca-water-affordability/notebooks
 
 # mypy
 .mypy_cache/
