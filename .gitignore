@@ -99,6 +99,8 @@ venv.bak/
 
 # mkdocs documentation
 /site
+src/*
+notebooks/*
 
 # mypy
 .mypy_cache/
